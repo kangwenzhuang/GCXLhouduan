@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kang.qiandao.mapper.JoincourseMapper">
+  <resultMap id="BaseResultMap" type="com.kang.qiandao.model.Joincourse">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="courseid" jdbcType="VARCHAR" property="courseid" />
+    <result column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="grade" jdbcType="INTEGER" property="grade" />
+  </resultMap>
+</mapper>

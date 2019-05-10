@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+    <!-- 开启后可以通过jmx动态控制日志级别(springboot Admin的功能) -->
+    <!--<jmxConfigurator/>-->
+
+    <property name="CONSOLE_LOG_PATTERN"
+              value="%date{yyyy-MM-dd HH:mm:ss} %highlight(%-5level) %boldYellow(%thread)  %boldGreen(%logger)  %msg%n"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoder 默认配置为PatternLayoutEncoder -->
+        <encoder>
+            <pattern>[%d{HH:mm:ss.SSS} %thread] %highlight([%-5level]) %cyan(%logger{38}) - %highlight(%msg) %n</pattern>
+            <!--<pattern>${CONSOLE_LOG_PATTERN}</pattern>-->
+            <!--<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level  - %msg%n</pattern>-->
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>D:/logs/projectRegistration/${LOG_FILE}</File>
+        <encoder>
+            <pattern>[%date %level] [%thread] %logger{60} [%file : %line] %msg%n</pattern>
+            <!--<pattern>%date [%level] [%thread] %logger{60} [%file : %line] %msg%n</pattern>-->
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 添加.gz 历史日志会启用压缩 大大缩小日志文件所占空间 -->
+            <fileNamePattern>D:/logs/dwbg/daily/${LOG_FILE}.%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <maxHistory>30</maxHistory><!--  保留30天日志 -->
+        </rollingPolicy>
+    </appender>
+
+    <logger name="cn.springboot" level="debug" />
+    <logger name="org.springframework.core.env" level="info" />
+    <logger name="org.springframework" level="info" />
+    <logger name="org.springframework.jndi" level="info" />
+
+    <logger name="cn.springboot" level="debug" />
+    <logger name="org.springframework" level="info" />
+    <logger name="org.jboss" level="info" />
+    <logger name="org.fasterxml" level="info" />
+    <logger name="org.hibernate" level="info" />
+    <logger name="javax.el" level="info" />
+    <logger name="org.apache" level="info" />
+    <logger name="com.alibaba" level="info" />
+    <logger name="druid.sql" level="info" />
+    <logger name="freemarker" level="info" />
+    <logger name="org.mybatis" level="info" />
+
+    <!-- mybatis sql log -->
+    <logger name="org.apache.ibatis.jdbc.ScriptRunner" level="debug" />
+    <logger name="java.sql.Connection" level="debug" />
+    <logger name="java.sql.Statement" level="debug" />
+    <logger name="java.sql.PreparedStatement" level="debug" />
+    <!--<logger name="org.springframework" level="error"/>-->
+    <!--<logger name="jdbc.connection" level="OFF"/>-->
+    <!--<logger name="org.apache" level="error"/>-->
+    <!--<logger name="com.alibaba" level="error"/>-->
+    <!--<logger name="org.apache.kafka.clients.producer.ProducerConfig" level="warn"/>-->
+
+    <root level="debug">
+        <appender-ref ref="STDOUT"/>
+        <!--<appender-ref ref="CONSOLE"/>-->
+
+      <!-- <appender-ref ref="FILE"/>-->
+    </root>
+</configuration>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kang.qiandao.mapper.CourseMapper">
+  <resultMap id="BaseResultMap" type="com.kang.qiandao.model.Course">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="banji" jdbcType="VARCHAR" property="banji" />
+    <result column="kch" jdbcType="VARCHAR" property="kch" />
+    <result column="kcm" jdbcType="VARCHAR" property="kcm" />
+    <result column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="imageurl" jdbcType="VARCHAR" property="imageurl" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="overtime" jdbcType="TIMESTAMP" property="overtime" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="beginqiandao" jdbcType="INTEGER" property="beginqiandao" />
+    <result column="qiandaoid" jdbcType="VARCHAR" property="qiandaoid" />
+    <result column="qiandaobegintime" jdbcType="INTEGER" property="qiandaobegintime" />
+  </resultMap>
+</mapper>

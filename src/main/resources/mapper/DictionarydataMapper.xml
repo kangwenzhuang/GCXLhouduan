@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kang.qiandao.mapper.DictionarydataMapper">
+    <resultMap id="BaseResultMap" type="com.kang.qiandao.model.Dictionarydata">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="VARCHAR" property="id" />
+        <result column="dictValue" jdbcType="INTEGER" property="dictValue" />
+        <result column="dictdataName" jdbcType="VARCHAR" property="dictdataName" />
+        <result column="dictdataValue" jdbcType="INTEGER" property="dictdataValue" />
+    </resultMap>
+</mapper>
